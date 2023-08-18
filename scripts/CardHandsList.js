@@ -142,7 +142,7 @@ export class CardHandsList extends Application {
         const hand = game.cards.get(handId);
         const options = {how: 2, updateData: true ? {face: null} : {}};
         const deck = game.cards.filter(c => (c.type === "deck") && c.testUserPermission(game.user, "LIMITED"))[0];
-        cards.draw(deck, 1, options);
+        hand.draw(deck, 1, options);
         // const cardsDrawn = await hand.drawDialog();
         // Custom message output using the SWADE Adventure Deck module's template
         const swadeAdventureDeckModule = game.modules.find((m) => m.id === 'adventure-deck');
